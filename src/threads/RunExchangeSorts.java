@@ -8,6 +8,7 @@ import sorts.CocktailShakerSort;
 import sorts.CombSort;
 import sorts.DualPivotQuickSort;
 import sorts.GnomeSort;
+import sorts.IterativeCombSort;
 import sorts.LLQuickSort;
 import sorts.LRQuickSort;
 import sorts.OddEvenSort;
@@ -61,6 +62,7 @@ final public class RunExchangeSorts extends MultipleSortThread {
     private Sort LRQuickSort;
     private Sort DualPivotQuickSort;
     private Sort StableQuickSort;
+    private Sort IterativeCombSort;
     
     public RunExchangeSorts(ArrayVisualizer ArrayVisualizer) {
         super(ArrayVisualizer);
@@ -81,6 +83,7 @@ final public class RunExchangeSorts extends MultipleSortThread {
         LRQuickSort        = new        LRQuickSort(Delays, Highlights, Reads, Writes);
         DualPivotQuickSort = new DualPivotQuickSort(Delays, Highlights, Reads, Writes);
         StableQuickSort    = new    StableQuickSort(Delays, Highlights, Reads, Writes);
+        IterativeCombSort  = new  IterativeCombSort(Delays, Highlights, Reads, Writes);
     }
 
     @Override
@@ -94,6 +97,7 @@ final public class RunExchangeSorts extends MultipleSortThread {
         RunExchangeSorts.this.runIndividualSort(SmartGnomeSort,     0, array,  128, 0.025);
         RunExchangeSorts.this.runIndividualSort(BinaryGnomeSort,    0, array,  128, 0.025);
         RunExchangeSorts.this.runIndividualSort(CombSort,           0, array, 1024, 1);
+        RunExchangeSorts.this.runIndividualSort(IterativeCombSort,  0, array, 1024, 1);
         RunExchangeSorts.this.runIndividualSort(CircleSort,         0, array, 1024, 1);
         RunExchangeSorts.this.runIndividualSort(LLQuickSort,        0, array, 2048, ArrayManager.getShuffle() == Shuffles.RANDOM ? 1.5 : 65);
         RunExchangeSorts.this.runIndividualSort(LRQuickSort,        0, array, 2048, 1);

@@ -9,6 +9,7 @@ import sorts.ExchangeBogoSort;
 import sorts.LessBogoSort;
 import sorts.SillySort;
 import sorts.SlowSort;
+import sorts.SmartBogoSort;
 import sorts.StoogeSort;
 import templates.JErrorPane;
 import templates.MultipleSortThread;
@@ -49,13 +50,14 @@ final public class RunImpracticalSorts extends MultipleSortThread {
     private Sort BubbleBogoSort;
     private Sort LessBogoSort;
     private Sort CocktailBogoSort;
+	private Sort SmartBogoSort;
     private Sort BogoSort;
-    
+
     public RunImpracticalSorts(ArrayVisualizer ArrayVisualizer) {
         super(ArrayVisualizer);
         this.sortCount = 9;
         this.categoryCount = this.sortCount;
-        
+
         BadSort          = new          BadSort(Delays, Highlights, Reads, Writes);
         StoogeSort       = new       StoogeSort(Delays, Highlights, Reads, Writes);
         SillySort        = new        SillySort(Delays, Highlights, Reads, Writes);
@@ -64,6 +66,7 @@ final public class RunImpracticalSorts extends MultipleSortThread {
         BubbleBogoSort   = new   BubbleBogoSort(Delays, Highlights, Reads, Writes);
         LessBogoSort     = new     LessBogoSort(Delays, Highlights, Reads, Writes);
         CocktailBogoSort = new CocktailBogoSort(Delays, Highlights, Reads, Writes);
+        SmartBogoSort    = new    SmartBogoSort(Delays, Highlights, Reads, Writes);
         BogoSort         = new         BogoSort(Delays, Highlights, Reads, Writes);
     }
 
@@ -78,6 +81,7 @@ final public class RunImpracticalSorts extends MultipleSortThread {
         RunImpracticalSorts.this.runIndividualSort(BubbleBogoSort,   0, array, 32,  0.01);
         RunImpracticalSorts.this.runIndividualSort(LessBogoSort,     0, array, 16,  0.0025);
         RunImpracticalSorts.this.runIndividualSort(CocktailBogoSort, 0, array, 16,  0.0025);
+        RunImpracticalSorts.this.runIndividualSort(SmartBogoSort,    0, array,  8,  1);
         RunImpracticalSorts.this.runIndividualSort(BogoSort,         0, array,  8,  1);
         Sounds.toggleSofterSounds(false);
     }

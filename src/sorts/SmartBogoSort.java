@@ -34,7 +34,7 @@ final public class SmartBogoSort extends BogoSorting {
         this.setSortPromptID("Smart Bogo");
         this.setRunAllID("Permutation Sort");
         this.setReportSortID("Permutation Sort");
-        this.setCategory("Distributive Sorts");
+        this.setCategory("Impractical Sorts");
         this.isComparisonBased(false);
         this.isBucketSort(false);
         this.isRadixSort(false);
